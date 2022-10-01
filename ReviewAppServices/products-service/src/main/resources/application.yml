@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active : ${PROFILE:test}
+
+  application:
+    name: products-service
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: user
+    password: password
+
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: 'create-drop'
+  h2:
+    console:
+      enabled: true;
+ # config:
+  #  import: optional:configserver:http://localhost:8888/
+
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 means 100% logging 0.1 means 10% of logging will be traced
+
+  zipkin:
+    base-url: ${ZIPKIN_BASE_URL}
+
+service:
+  welcome:
+    msg: Welcome To Products Service
+
+server:
+  port: 8381
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE}
+
+  instance: localhost

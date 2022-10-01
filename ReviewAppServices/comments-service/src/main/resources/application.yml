@@ -1,0 +1,48 @@
+spring:
+
+  application:
+    name: COMMENTS-SERVICE
+
+  profiles:
+    active: ${PROFILE:test}
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: user
+    password: password
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: 'create-drop'
+      dialect: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true;
+
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 means 100% logging 0.1 means 10% of logging will be traced
+
+  zipkin:
+    base-url: ${ZIPKIN_BASE_URL}
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE}
+
+  instance: localhost
+
+#  instance: localhost
+ # config:
+  #  import: optional:configserver:http://localhost:8888/
+
+service:
+  welcome:
+    msg: Welcome To Comment Service
+
+server:
+  port: 8281

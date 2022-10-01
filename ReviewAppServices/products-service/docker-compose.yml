@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    container_name: product_db
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD : <YOUR-DB-PASSWORD>
+      MYSQL_USER : <DB-USER-NAME>
+      MYSQL_DATABASE : productdb
+    ports:
+      - "3307:3306"
+
+  web:
+    depends_on:
+      - db
+    restart: on-failure
+    container_name: product-service
+    image: "torrydocker/productservice"
+    environment:
+      PROFILE : dev
+      DB_HOST : product_db
+      DB_PORT : 3306
+      DB_USER : <DB-USER-NAME>
+      DB_PASSWORD : <YOUR-DB-PASSWORD>
+      DB_NAME: productdb
+
+    ports:
+      - 8381:8381

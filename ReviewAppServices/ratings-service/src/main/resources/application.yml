@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: ratings-service
+
+  profiles:
+    active: ${PROFILE:test}
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: user
+    password: password
+
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: 'create-drop'
+      dialect: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true # Enable Access to H2 client Console http://localhost:8181/h2-console/login.jsp
+
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 means 100% logging 0.1 means 10% of logging will be traced
+
+  zipkin:
+    base-url: ${ZIPKIN_BASE_URL}
+
+ # config:
+  #  import: optional:configserver:http://localhost:8888/
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE}
+
+service:
+  welcome:
+    msg: Welcome To Rating Service
+
+server:
+  port: 8181
+

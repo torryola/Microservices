@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: app-user-service
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME} # To-Do Database to be created
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      ddl-auto: create-drop
+
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 means 100% logging 0.1 means 10% of logging will be traced
+
+  zipkin:
+    base-url: ${ZIPKIN_BASE_URL}
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE}
+
+  #config:
+   # import: optional:configserver:http://localhost:8888/
+
+server:
+  port: 8081

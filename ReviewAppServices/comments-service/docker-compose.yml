@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+
+  db:
+    container_name: comment-db
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: <TEST-DB-PASSWORD> # Replace appropriately
+      MYSQL_USER: dev-user
+      MYSQL_DATABASE: commentdb
+    ports:
+      - "3307:3306"
+    networks:
+      - comment-service-network
+
+  web:
+    depends_on:
+      - db
+    container_name: comment-service
+    image: torrydocker/commentservice
+    environment:
+      PROFILE: dev
+      DB_URL: comment-db
+      DB_USER: <DB-USER-NAME> # Replace appropriately
+      DB_PASSWORD: <DB-USER-PASSWORD> # Replace appropriately
+      DB_PORT: 3306
+      DB_NAME: commentdb
+    ports:
+      - "8281:8281"
+    networks:
+      - comment-service-network
+networks:
+  comment-service-network:

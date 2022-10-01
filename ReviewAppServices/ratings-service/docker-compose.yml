@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  db:
+    container_name: rating-db
+    image: mysql:5.7
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: <DB-PASSWORD>
+      MYSQL_USER: <DB-USER-NAME>
+      MYSQL_DATABASE: ratingdb
+    ports:
+      - "3307:3306"
+  web:
+    depends_on:
+      - db
+    #restart: on-failure
+    container_name: rating-service
+    image: torrydocker/ratingservice
+    environment:
+      PROFILE: dev
+      DB_HOST: rating-db
+      DB_PORT: 3306
+      DB_NAME: ratingdb
+      DB_USER: <DB-USER-NAME>
+      DB_PASSWORD: <DB-PASSWORD>
+    ports:
+      - "8181:8181"

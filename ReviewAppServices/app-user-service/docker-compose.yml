@@ -1,0 +1,36 @@
+version: "3"
+services:
+  database:
+    container_name: mysql-db
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: testdb
+      MYSQL_ROOT_PASSWORD: <TEST-DB-PASSWORD> # Replace appropriately
+      #MYSQL_USER: root
+    ports:
+      - "3306:3306"
+    networks:
+      - app-user-network
+
+  web:
+    depends_on:
+      - database
+    container_name: app-user
+    image: "torrydocker/appuser:latest"
+    environment:
+      PROFILE: dev
+      DB_DRIVER: com.mysql.cj.jdbc.Driver
+      DB_HOST: mysql-db
+      DB_NAME: testdb
+      DB_USER: <DB-USER-NAME> # Replace appropriately
+      DB_PASSWORD: <DB-USER-PASSWORD> # Replace appropriately
+      DB_PORT: 3306
+    ports:
+      - 8081:8081
+    networks:
+      - app-user-network
+    restart: on-failure # Restart the service to config logback properly
+
+
+networks:
+  app-user-network:
