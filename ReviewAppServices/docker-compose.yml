@@ -1,0 +1,175 @@
+version: "3"
+
+services:
+  # Service Discovery - Eureka server with memory limit of 700m for demo purposes only
+  eureka-server:
+    container_name: eureka-server
+    image: torrydocker/eureka-server:latest
+    ports:
+      - "8761:8761"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - review-compose-network
+  # Sleuth/Zipkin Server - Distributed Tracing
+  zipkin-server:
+    container_name: zipkin-server
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+#    environment:
+#      SPRING_ZIPKIN_URL: "http://localhost:9411/zipkin"
+    networks:
+      - review-compose-network
+# RabbitMQ for Zipkin
+  rabbit-mq-zipkin:
+    container_name: rabbitmq-server
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  # API-Gateway
+  api-gateway:
+    depends_on:
+      - zipkin-server
+      - eureka-server
+      - rabbit-mq-zipkin
+    container_name: api-gateway
+    image: torrydocker/api-gateway:latest
+    ports:
+      - "9001:9001"
+    environment:
+      EUREKA_DEFAULT_ZONE: "http://eureka-server:8761/eureka/"
+      ZIPKIN_BASE_URL: "http://zipkin-server:9411/"
+    networks:
+      - review-compose-network
+  # Database Service - H2 used for dev and test
+  db:
+    container_name: mysql-container
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: <DB-PASSWORD>
+      MYSQL_USER: <DB-USER>
+       # MYSQL_DATABASE: ratingdb
+    restart: always
+    networks:
+      - review-compose-network
+  # Review Service
+  reviews-service:
+    container_name: reviews-service
+    image: torrydocker/review-service:latest
+    depends_on:
+      - zipkin-server
+      - eureka-server
+      - rabbit-mq-zipkin
+      - api-gateway
+    environment:
+      EUREKA_DEFAULT_ZONE: "http://eureka-server:8761/eureka/"
+      ZIPKIN_BASE_URL: "http://zipkin-server:9411/"
+      API_GATEWAY_BASE_URL: "http://api-gateway:9001/"
+    ports:
+      - "8481:8481"
+    networks:
+      - review-compose-network
+  # Rating-Service
+  rating-service:
+    depends_on:
+      - zipkin-server
+      - eureka-server
+      - rabbit-mq-zipkin
+      - db
+    container_name: rating-service
+    image: torrydocker/ratingservice:latest
+    environment:
+      PROFILE: test
+      DB_HOST: mysql-container
+      DB_PORT: 3306
+      DB_NAME: ratingdb
+      DB_USER: <DB-USER>
+      DB_PASSWORD: <DB-PASSWORD>
+      EUREKA_DEFAULT_ZONE: "http://eureka-server:8761/eureka/"
+      ZIPKIN_BASE_URL: "http://zipkin-server:9411/"
+    networks:
+      - review-compose-network
+    ports:
+      - "8181:8181"
+  # Product Service
+  product-service:
+    depends_on:
+      - eureka-server
+      - zipkin-server
+      - rabbit-mq-zipkin
+      - api-gateway
+      - db
+    container_name: product-service
+    image: torrydocker/productservice:latest
+    environment:
+      PROFILE: test
+      DB_HOST: mysql-container
+      DB_PORT: 3306
+      DB_NAME: productdb
+      DB_USER: <DB-USER>
+      DB_PASSWORD: <DB-PASSWORD>
+      EUREKA_DEFAULT_ZONE: "http://eureka-server:8761/eureka/"
+      ZIPKIN_BASE_URL: "http://zipkin-server:9411/"
+      API_GATEWAY_BASE_URL: "http://api-gateway:9001/"
+    ports:
+      - "8381:8381"
+    networks:
+      - review-compose-network
+
+# App-User Service
+  app-user-service:
+    depends_on:
+      - db
+      - api-gateway
+      - rabbit-mq-zipkin
+      - eureka-server
+      - zipkin-server
+    container_name: app-user-service
+    image: torrydocker/appuser:latest
+    environment:
+      PROFILE: test
+      DB_HOST: mysql-container
+      DB_PORT: 3306
+      DB_NAME: appuser-db
+      DB_USER: <DB-USER-NAME>
+      DB_PASSWORD: <DB-PASSWORD>
+      EUREKA_DEFAULT_ZONE: "http://eureka-server:8761/eureka/"
+      ZIPKIN_BASE_URL: "http://zipkin-server:9411/"
+      API_GATEWAY_BASE_URL: "http://api-gateway:9001/"
+    ports:
+      - "8081:8081"
+    networks:
+      - review-compose-network
+# Comment-Service
+  comment-service:
+    depends_on:
+      - db
+      - api-gateway
+      - eureka-server
+      - zipkin-server
+      - rabbit-mq-zipkin
+    container_name: comment-service
+    image: torrydocker/commentservice
+    environment:
+      PROFILE: dev
+      DB_HOST: mysql-container
+      DB_PORT: 3306
+      DB_NAME: commentdb
+      DB_USER: <DB-USER-NAME>
+      DB_PASSWORD: <DB-PASSWORD>
+      EUREKA_DEFAULT_ZONE: "http://eureka-server:8761/eureka/"
+      ZIPKIN_BASE_URL: "http://zipkin-server:9411/"
+      API_GATEWAY_BASE_URL: "http://api-gateway:9001/"
+    ports:
+      - "8281:8281"
+    networks:
+      - review-compose-network
+# Network
+networks:
+  review-compose-network:
