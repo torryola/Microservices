@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+<!--    <property file="/usr/app/Logback-Db-Config.properties"/>-->
+    <property name="LOGS" value="./logs"/>
+    <property name="ARCHIVE_DIR" value="${LOGS}/archive"/>
+    <property name="SEVERE_LOG_FILE" value="app-severe-logs"/>
+    <!-- Include DbAppender Config -->
+    <appender name="DB_APPENDER" class="ch.qos.logback.classic.db.DBAppender">
+        <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+            <driverClass>${DB_DRIVER}</driverClass>
+            <url>jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}</url>
+            <user>${DB_USER}</user>
+            <password>${DB_PASSWORD}</password>
+        </connectionSource>
+    </appender>
+    <!-- Include SMTAppender Config -->
+    <appender name="EMAIL_APPENDER" class="ch.qos.logback.classic.net.SMTPAppender">
+        <smtpHost>${SMTP}</smtpHost>
+        <smtpPort>${SMTP_PORT}</smtpPort>
+        <STARTTLS>true</STARTTLS>
+        <username>${LOG_BACK_USER_NAME}</username>
+        <password>${LOG_BACK_PASSWORD}</password>
+        <!--
+        By default, the asynchronousSending property is 'true'.
+        However, under certain circumstances asynchronous sending may be inappropriate.
+        For example if your application uses SMTPAppender to send alerts in response to a fatal error,
+        and then exits, the relevant thread may not have the time to send the alert email.
+        In this case, set asynchronousSending property to 'false' for synchronous email transmission.
+        -->
+        <asynchronousSending>false</asynchronousSending>
+        <to>${LOG_RECIPIENT_EMAIL }</to>
+        <from>${LOG_SENDER_EMAIL}</from>
+        <subject>${project.build.finalName}: %logger{20} - %m</subject>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date %-5level %logger{35} - %message%n</pattern>
+        </layout>
+        <cyclicBufferTracker class="ch.qos.logback.core.spi.CyclicBufferTracker">
+            <!-- send just 5 log entry per email -Default is 256 -->
+            <bufferSize>5</bufferSize>
+        </cyclicBufferTracker>
+    </appender>
+    <!-- Rolling File Appender to log from WARN to ERROR only - This separates concerns  -->
+    <appender name="SEVERE_FILE_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/${SEVERE_LOG_FILE}.log</file>
+        <!-- Log level filter -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <!-- File content pattern -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                %d %p %C{1.} [%t] %m%n
+            </pattern>
+        </encoder>
+        <!-- Archiving policy i.e. what to do with the file when it reaches the threshold-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Rollover the file daily and when it reached 30mb-->
+            <fileNamePattern>${ARCHIVE_DIR}/%d{yyyy-MM-dd}/${SEVERE_LOG_FILE}-%i.log</fileNamePattern>
+            <!--   <fileNamePattern>${ARCHIVE_DIR}/app-log-%d{yyyy-MM-dd}.%i.log</fileNamePattern> -->
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100kb</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+
+        </rollingPolicy>
+    </appender>
+    <!-- Include General FileAppender -->
+    <appender name="FILE_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/app-logs.log</file>
+        <!-- File content pattern -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                %d %p %C{1.} [%t] %m%n
+            </pattern>
+        </encoder>
+        <!-- Archiving policy i.e. what to do with the file when it reaches the threshold-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Rollover the file daily and when it reached 30mb-->
+            <fileNamePattern>${ARCHIVE_DIR}/%d{yyyy-MM-dd}/app-log-%i.log</fileNamePattern>
+            <!--            <fileNamePattern>${ARCHIVE_DIR}/app-log-%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100kb</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+
+        </rollingPolicy>
+    </appender>
+    <!-- Appender for Console to log from trace to error -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </layout>
+    </appender>
+
+    <!-- Profile-Base Logger - Profiles(dev, test, prod) -->
+<!--    For fine grain logging, we can specify the package to log data from e.g. net.torrydev.microservices.appuserservice.*-->
+<!--    For example - -->
+    <springProfile name="test, dev">
+        <root level="DEBUG">
+            <appender-ref ref="FILE_APPENDER"/>
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="SEVERE_FILE_APPENDER"/>
+            <appender-ref ref="DB_APPENDER"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="stage | pre-prod">
+        <root level="INFO">
+            <appender-ref ref="FILE_APPENDER"/>
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="SEVERE_FILE_APPENDER"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="prod">
+        <root level="WARN">
+            <appender-ref ref="FILE_APPENDER"/>
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="SEVERE_FILE_APPENDER"/>
+            <appender-ref ref="DB_APPENDER"/>
+            <appender-ref ref="EMAIL_APPENDER"/>
+        </root>
+    </springProfile>
+
+<!--    <root level="INFO">-->
+<!--        <appender-ref ref="FILE_APPENDER"/>-->
+<!--        <appender-ref ref="CONSOLE"/>-->
+<!--        <appender-ref ref="SEVERE_FILE_APPENDER"/>-->
+<!--        <appender-ref ref="DB_APPENDER"/>-->
+<!--        <appender-ref ref="EMAIL_APPENDER"/>-->
+<!--    </root>-->
+
+</configuration>
