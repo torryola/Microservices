@@ -18,3 +18,5 @@
 - Git
 - Maven
 - Linux
+- Sleuth/Zipkin
+- Eureka 
