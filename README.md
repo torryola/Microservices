@@ -9,10 +9,12 @@
 
 ### **Tech Stack**:
 - Java 11+
-- Spring Boot 2+
+- Spring Boot 2.7+
 - Spring Cloud
-- Mockito and TestEngine
+- Mockito, TestEngine and JUnit
 - MySql And H2 Databases
 - Docker 
 - RabbitMQ
+- Git
+- Maven
 - Linux
