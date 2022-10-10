@@ -9,7 +9,7 @@
 
 ### **Tech Stack**:
 - Java 11+
-- Spring Boot 2.7+
+- Spring Boot 2.6+
 - Spring Cloud
 - Mockito, TestEngine and JUnit
 - MySql And H2 Databases
@@ -17,6 +17,7 @@
 - RabbitMQ
 - Git
 - Maven
+- Resilience4j
 - Linux
-- Sleuth/Zipkin
+- Distributed Logging (Sleuth/Zipkin)
 - Eureka 
