@@ -8,7 +8,7 @@
     <!-- Include DbAppender Config -->
     <appender name="DB_APPENDER" class="ch.qos.logback.classic.db.DBAppender">
         <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
-            <driverClass>${DB_DRIVER}</driverClass>
+            <driverClass>com.mysql.cj.jdbc.Driver</driverClass>
             <url>jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}</url>
             <user>${DB_USER}</user>
             <password>${DB_PASSWORD}</password>
