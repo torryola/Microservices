@@ -29,7 +29,7 @@
         In this case, set asynchronousSending property to 'false' for synchronous email transmission.
         -->
         <asynchronousSending>false</asynchronousSending>
-        <to>${LOG_RECIPIENT_EMAIL }</to>
+        <to>${LOG_RECIPIENT_EMAIL}</to>
         <from>${LOG_SENDER_EMAIL}</from>
         <subject>${project.build.finalName}: %logger{20} - %m</subject>
         <layout class="ch.qos.logback.classic.PatternLayout">
