@@ -1,1 +1,0 @@
-cls && docker-compose down
