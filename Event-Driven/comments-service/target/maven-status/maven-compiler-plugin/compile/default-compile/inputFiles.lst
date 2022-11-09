@@ -1,0 +1,13 @@
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\config\CommentServiceRMQTopicsConfig.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\service\RabbitMqPubServiceImpl.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\controller\RabbitMQController.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\model\RabbitMqMsg.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\config\RabbitMqConfig.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\repository\CommentRepository.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\model\RabbitMqSubMsg.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\controller\CommentsController.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\interfaces\ICommentService.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\model\Comment.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\CommentsServiceApplication.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\constants\ServiceConstants.java
+C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\comments-service\src\main\java\net\torrydev\microservices\commentsservice\service\CommentServiceImpl.java

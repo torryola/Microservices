@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.torrydev.microservices.commentsservice.CommentServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.787 s - in net.torrydev.microservices.commentsservice.CommentServiceApplicationTests

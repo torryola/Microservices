@@ -1,0 +1,12 @@
+net\torrydev\microservices\dashboardservice\constant\RabbitMQ_Constant.class
+net\torrydev\microservices\dashboardservice\model\RabbitMqSubMsg$RabbitMqSubMsgBuilder.class
+net\torrydev\microservices\dashboardservice\services\AppUser_Consumer_Service.class
+net\torrydev\microservices\dashboardservice\model\RabbitMqMsg$RabbitMqMsgBuilder.class
+net\torrydev\microservices\dashboardservice\DashboardServiceApplication.class
+net\torrydev\microservices\dashboardservice\services\Comment_Service_Consumer.class
+net\torrydev\microservices\dashboardservice\config\RabbitMqConfig.class
+net\torrydev\microservices\dashboardservice\model\RabbitMqMsg.class
+net\torrydev\microservices\dashboardservice\model\RabbitMqSubMsg.class
+net\torrydev\microservices\dashboardservice\services\Product_Service_Consumer.class
+net\torrydev\microservices\dashboardservice\services\AppUser_Service_Consumer.class
+net\torrydev\microservices\dashboardservice\services\Rating_Service_Consumer.class

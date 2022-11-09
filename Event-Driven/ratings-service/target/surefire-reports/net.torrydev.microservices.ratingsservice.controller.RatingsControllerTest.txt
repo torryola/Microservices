@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: net.torrydev.microservices.ratingsservice.controller.RatingsControllerTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.112 s - in net.torrydev.microservices.ratingsservice.controller.RatingsControllerTest
