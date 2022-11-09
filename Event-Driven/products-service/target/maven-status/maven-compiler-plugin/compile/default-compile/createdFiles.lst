@@ -1,0 +1,17 @@
+net\torrydev\microservices\productsservice\interfaces\IProductService.class
+net\torrydev\microservices\productsservice\model\RabbitMqSubMsg$RabbitMqSubMsgBuilder.class
+net\torrydev\microservices\productsservice\config\ProductServiceRMQTopicsConfig.class
+net\torrydev\microservices\productsservice\service\ProductServiceImpl.class
+net\torrydev\microservices\productsservice\repository\ProductRepository.class
+net\torrydev\microservices\productsservice\config\RabbitMqConfig.class
+net\torrydev\microservices\productsservice\controller\RabbitMQController.class
+net\torrydev\microservices\productsservice\ProductsServiceApplication.class
+net\torrydev\microservices\productsservice\model\Product$ProductBuilder.class
+net\torrydev\microservices\productsservice\config\ProductServiceRMQTopicsConfig$ProductServiceRMQTopicsConfigBuilder.class
+net\torrydev\microservices\productsservice\constants\ServiceConstants.class
+net\torrydev\microservices\productsservice\model\Product.class
+net\torrydev\microservices\productsservice\model\RabbitMqMsg.class
+net\torrydev\microservices\productsservice\controller\ProductController.class
+net\torrydev\microservices\productsservice\model\RabbitMqMsg$RabbitMqMsgBuilder.class
+net\torrydev\microservices\productsservice\model\RabbitMqSubMsg.class
+net\torrydev\microservices\productsservice\service\RabbitMqPubServiceImpl.class

@@ -1,0 +1,6 @@
+net\torrydev\microservices\productsservice\repository\ProductRepositoryTestContainerTest.class
+net\torrydev\microservices\productsservice\controller\ProductControllerTest.class
+net\torrydev\microservices\productsservice\ProductAcceptanceTest.class
+net\torrydev\microservices\productsservice\repository\ProductRepositoryTest.class
+net\torrydev\microservices\productsservice\service\ProductServiceImplTest.class
+net\torrydev\microservices\productsservice\repository\ProductTestContainerBase.class

@@ -1,0 +1,45 @@
+myapi:
+  version: /api/v1
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: APP-USER-SERVICE
+          uri: lb://APP-USER-SERVICE
+          predicates:
+            - Path=/api/v1/users/**
+        - id: PRODUCTS-SERVICE
+          uri: lb://PRODUCTS-SERVICE
+          predicates:
+            - Path=/api/v1/products/**
+        - id: COMMENTS-SERVICE
+          uri: lb://COMMENTS-SERVICE
+          predicates:
+            - Path=/api/v1/comments/**
+        - id: RATINGS-SERVICE
+          uri: lb://RATINGS-SERVICE
+          predicates:
+            - Path=/api/v1/ratings/**
+
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 means 100% logging 0.1 means 10% of logging will be traced
+
+  zipkin:
+    base-url: ${ZIPKIN_BASE_URL}
+
+server:
+  port: 9001
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE}
+
+  instance: localhost
