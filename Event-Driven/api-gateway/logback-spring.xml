@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <property name="LOGS" value="./logs"/>
+    <property name="ARCHIVE_DIR" value="${LOGS}/archive"/>
+    <property name="SEVERE_LOG_FILE" value="app-severe-logs"/>
+    <!-- Appender for Console to log from trace to error -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </layout>
+    </appender>
+
+    <!-- Rolling File Appender to log from info to error -->
+    <appender name="FILE_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/app-logs.log</file>
+        <!-- File content pattern -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                %d %p %C{1.} [%t] %m%n
+            </pattern>
+        </encoder>
+        <!-- Archiving policy i.e. what to do with the file when it reaches the threshold-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Rollover the file daily and when it reached 30mb-->
+            <fileNamePattern>${ARCHIVE_DIR}/%d{yyyy-MM-dd}/app-log-%i.log</fileNamePattern>
+            <!--            <fileNamePattern>${ARCHIVE_DIR}/app-log-%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100kb</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+
+        </rollingPolicy>
+    </appender>
+
+    <!-- Rolling File Appender to log from WARN to ERROR only - This separate concerns  -->
+    <appender name="SEVERE_FILE_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGS}/${SEVERE_LOG_FILE}.log</file>
+        <!-- Log level filter -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <!-- File content pattern -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                %d %p %C{1.} [%t] %m%n
+            </pattern>
+        </encoder>
+        <!-- Archiving policy i.e. what to do with the file when it reaches the threshold-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Rollover the file daily and when it reached 30mb-->
+            <fileNamePattern>${ARCHIVE_DIR}/%d{yyyy-MM-dd}/${SEVERE_LOG_FILE}-%i.log</fileNamePattern>
+            <!--            <fileNamePattern>${ARCHIVE_DIR}/app-log-%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100kb</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+
+        </rollingPolicy>
+    </appender>
+    <!-- Include DbAppender Config -->
+    <include resource="LogBack-Config/DbAppender-logback-config.xml"/>
+    <appender name="DB_APPENDER_WITH_DATA_SOURCE" class="ch.qos.logback.classic.db.DBAppender">
+        <!--        <connectionSource class="ch.qos.logback.core.db.DataSourceConnectionSource">-->
+        <!--            <dataSource class="com.mysql.cj.jdbc.MysqlDataSource">-->
+        <!--                <serverName>localhost</serverName>-->
+        <!--                <port>3306</port>-->
+        <!--                <databaseName>classicmodels</databaseName>-->
+        <!--                <user>root</user>-->
+        <!--                <password>toor1234</password>-->
+        <!--            </dataSource>-->
+        <!--&lt;!&ndash;            <driverClass>com.mysql.cj.jdbc.Driver</driverClass>&ndash;&gt;-->
+        <!--&lt;!&ndash;            <url>jdbc:mysql://localhost:3306/classicmodels</url>&ndash;&gt;-->
+        <!--        </connectionSource>-->
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="FILE_APPENDER"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="SEVERE_FILE_APPENDER"/>
+        <appender-ref ref="DB_APPENDER"/>
+    </root>
+    <!--
+    For fine grain logging, we can specify the package to log data from e.g. net.torrydev.microservices.appuserservice.*
+    For example -
+        <logger name="net.torrydev.microservices.appuserservice" level="trace" activity="false">
+        <appender-ref ref="FILE_APPENDER"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    -->
+</configuration>
