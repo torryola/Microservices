@@ -1,5 +1,0 @@
-net\torrydev\microservices\commentsservice\service\CommentServiceImplTest.class
-net\torrydev\microservices\commentsservice\repository\CommentRepositoryTest.class
-net\torrydev\microservices\commentsservice\AcceptanceTest.class
-net\torrydev\microservices\commentsservice\controller\CommentsControllerTest.class
-net\torrydev\microservices\commentsservice\CommentServiceApplicationTests.class
