@@ -1,0 +1,958 @@
+2022-11-09 13:31:05,455 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2022-11-09 13:31:05,459 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:31:10,664 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Disable delta property : false
+2022-11-09 13:31:10,665 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Single vip registry refresh property : null
+2022-11-09 13:31:10,666 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Force full registry fetch : false
+2022-11-09 13:31:10,669 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application is null : false
+2022-11-09 13:31:10,667 ERROR com.netflix.discovery.DiscoveryClient [DiscoveryClient-HeartbeatExecutor-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:31:10,670 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Registered Applications size is zero : true
+2022-11-09 13:31:10,670 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application version is -1: true
+2022-11-09 13:31:10,670 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Getting all instance registry info from the eureka server
+2022-11-09 13:31:10,671 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = There is no known eureka server; cluster server list is empty stacktrace = com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-11-09 13:31:10,671 DEBUG com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: null, is fetching remote regions? false 
+2022-11-09 13:31:10,710 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100: registering service...
+2022-11-09 13:31:10,710 WARN com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - registration failed There is no known eureka server; cluster server list is empty
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:31:10,711 WARN com.netflix.discovery.InstanceInfoReplicator [DiscoveryClient-InstanceInfoReplicator-0] There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:31:35,464 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2022-11-09 13:31:35,464 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:31:40,681 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Disable delta property : false
+2022-11-09 13:31:40,682 ERROR com.netflix.discovery.DiscoveryClient [DiscoveryClient-HeartbeatExecutor-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:31:40,682 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Single vip registry refresh property : null
+2022-11-09 13:31:40,682 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Force full registry fetch : false
+2022-11-09 13:31:40,682 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application is null : false
+2022-11-09 13:31:40,683 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Registered Applications size is zero : true
+2022-11-09 13:31:40,683 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application version is -1: true
+2022-11-09 13:31:40,683 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Getting all instance registry info from the eureka server
+2022-11-09 13:31:40,684 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = There is no known eureka server; cluster server list is empty stacktrace = com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-11-09 13:31:40,684 DEBUG com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: null, is fetching remote regions? false 
+2022-11-09 13:31:40,713 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100: registering service...
+2022-11-09 13:31:40,713 WARN com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - registration failed There is no known eureka server; cluster server list is empty
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:31:40,713 WARN com.netflix.discovery.InstanceInfoReplicator [DiscoveryClient-InstanceInfoReplicator-0] There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:32:05,467 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2022-11-09 13:32:05,467 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:32:10,685 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Disable delta property : false
+2022-11-09 13:32:10,685 ERROR com.netflix.discovery.DiscoveryClient [DiscoveryClient-HeartbeatExecutor-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:32:10,686 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Single vip registry refresh property : null
+2022-11-09 13:32:10,686 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Force full registry fetch : false
+2022-11-09 13:32:10,686 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application is null : false
+2022-11-09 13:32:10,686 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Registered Applications size is zero : true
+2022-11-09 13:32:10,687 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application version is -1: true
+2022-11-09 13:32:10,687 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Getting all instance registry info from the eureka server
+2022-11-09 13:32:10,687 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = There is no known eureka server; cluster server list is empty stacktrace = com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-11-09 13:32:10,689 DEBUG com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: null, is fetching remote regions? false 
+2022-11-09 13:32:10,717 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100: registering service...
+2022-11-09 13:32:10,717 WARN com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - registration failed There is no known eureka server; cluster server list is empty
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:32:10,717 WARN com.netflix.discovery.InstanceInfoReplicator [DiscoveryClient-InstanceInfoReplicator-0] There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:32:35,478 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2022-11-09 13:32:35,478 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:32:40,696 ERROR com.netflix.discovery.DiscoveryClient [DiscoveryClient-HeartbeatExecutor-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:32:40,696 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Disable delta property : false
+2022-11-09 13:32:40,696 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Single vip registry refresh property : null
+2022-11-09 13:32:40,696 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Force full registry fetch : false
+2022-11-09 13:32:40,696 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application is null : false
+2022-11-09 13:32:40,696 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Registered Applications size is zero : true
+2022-11-09 13:32:40,697 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application version is -1: true
+2022-11-09 13:32:40,697 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Getting all instance registry info from the eureka server
+2022-11-09 13:32:40,697 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = There is no known eureka server; cluster server list is empty stacktrace = com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-11-09 13:32:40,697 DEBUG com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: null, is fetching remote regions? false 
+2022-11-09 13:32:40,726 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100: registering service...
+2022-11-09 13:32:40,726 WARN com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - registration failed There is no known eureka server; cluster server list is empty
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:32:40,727 WARN com.netflix.discovery.InstanceInfoReplicator [DiscoveryClient-InstanceInfoReplicator-0] There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:33:05,485 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2022-11-09 13:33:05,485 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:33:10,697 ERROR com.netflix.discovery.DiscoveryClient [DiscoveryClient-HeartbeatExecutor-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - was unable to send heartbeat!
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:893)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1457)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:33:10,698 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Disable delta property : false
+2022-11-09 13:33:10,698 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Single vip registry refresh property : null
+2022-11-09 13:33:10,698 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Force full registry fetch : false
+2022-11-09 13:33:10,698 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application is null : false
+2022-11-09 13:33:10,698 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Registered Applications size is zero : true
+2022-11-09 13:33:10,698 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application version is -1: true
+2022-11-09 13:33:10,698 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Getting all instance registry info from the eureka server
+2022-11-09 13:33:10,698 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = There is no known eureka server; cluster server list is empty stacktrace = com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1101)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:1014)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1531)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1498)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+2022-11-09 13:33:10,698 DEBUG com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: null, is fetching remote regions? false 
+2022-11-09 13:33:10,728 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100: registering service...
+2022-11-09 13:33:10,728 WARN com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - registration failed There is no known eureka server; cluster server list is empty
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:33:10,730 WARN com.netflix.discovery.InstanceInfoReplicator [DiscoveryClient-InstanceInfoReplicator-0] There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:33:18,489 INFO org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinAutoConfiguration$1 [Thread-6] Flushing remaining spans on shutdown
+2022-11-09 13:33:18,489 DEBUG org.springframework.boot.availability.ApplicationAvailabilityBean [SpringApplicationShutdownHook] Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2022-11-09 13:33:18,490 DEBUG org.springframework.context.support.AbstractApplicationContext [SpringApplicationShutdownHook] Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3ec860d5, started on Wed Nov 09 13:30:31 GMT 2022
+2022-11-09 13:33:18,490 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry [SpringApplicationShutdownHook] Unregistering application DASHBOARD-SERVICE with eureka with status DOWN
+2022-11-09 13:33:18,490 INFO com.netflix.discovery.DiscoveryClient$3 [SpringApplicationShutdownHook] Saw local status change event StatusChangeEvent [timestamp=1668000798490, current=DOWN, previous=UP]
+2022-11-09 13:33:18,492 DEBUG com.netflix.discovery.InstanceInfoReplicator$1 [DiscoveryClient-InstanceInfoReplicator-0] Executing on-demand update of local InstanceInfo
+2022-11-09 13:33:18,492 DEBUG com.netflix.discovery.InstanceInfoReplicator$1 [DiscoveryClient-InstanceInfoReplicator-0] Canceling the latest scheduled update, it will be rescheduled at the end of on demand update
+2022-11-09 13:33:18,492 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100: registering service...
+2022-11-09 13:33:18,492 WARN com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - registration failed There is no known eureka server; cluster server list is empty
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:33:18,493 WARN com.netflix.discovery.InstanceInfoReplicator [DiscoveryClient-InstanceInfoReplicator-0] There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:876)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:33:18,493 DEBUG org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [SpringApplicationShutdownHook] Stopping beans in phase 2147483647
+2022-11-09 13:33:18,494 DEBUG org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer [SpringApplicationShutdownHook] Shutting down Rabbit listener container
+2022-11-09 13:33:18,496 INFO org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Waiting for workers to finish.
+2022-11-09 13:33:18,497 DEBUG org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$InternalConsumer [pool-3-thread-7] Received cancelOk for tag amq.ctag--zNYC_zlYXKDi-l23UCKfw (app-user-pub); Consumer@2e3f8316: tags=[[amq.ctag--zNYC_zlYXKDi-l23UCKfw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683], acknowledgeMode=AUTO local queue size=0
+2022-11-09 13:33:18,906 DEBUG org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Cancelling Consumer@2e3f8316: tags=[[amq.ctag--zNYC_zlYXKDi-l23UCKfw]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683], acknowledgeMode=AUTO local queue size=0
+2022-11-09 13:33:18,907 DEBUG org.springframework.amqp.rabbit.listener.BlockingQueueConsumer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683]
+2022-11-09 13:33:18,907 DEBUG org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,1)
+2022-11-09 13:33:18,915 INFO org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Successfully waited for workers to finish.
+2022-11-09 13:33:18,916 DEBUG org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer [SpringApplicationShutdownHook] Shutting down Rabbit listener container
+2022-11-09 13:33:18,918 INFO org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Waiting for workers to finish.
+2022-11-09 13:33:18,918 DEBUG org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$InternalConsumer [pool-3-thread-9] Received cancelOk for tag amq.ctag-Bkz7Wy7fV1P-JwHIEyTfog (comment-pub); Consumer@66695fcc: tags=[[amq.ctag-Bkz7Wy7fV1P-JwHIEyTfog]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683], acknowledgeMode=AUTO local queue size=0
+2022-11-09 13:33:18,921 DEBUG org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] Cancelling Consumer@66695fcc: tags=[[amq.ctag-Bkz7Wy7fV1P-JwHIEyTfog]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683], acknowledgeMode=AUTO local queue size=0
+2022-11-09 13:33:18,921 DEBUG org.springframework.amqp.rabbit.listener.BlockingQueueConsumer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683]
+2022-11-09 13:33:18,921 DEBUG org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,2)
+2022-11-09 13:33:18,923 INFO org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Successfully waited for workers to finish.
+2022-11-09 13:33:18,923 DEBUG org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer [SpringApplicationShutdownHook] Shutting down Rabbit listener container
+2022-11-09 13:33:18,924 INFO org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Waiting for workers to finish.
+2022-11-09 13:33:18,924 DEBUG org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$InternalConsumer [pool-3-thread-11] Received cancelOk for tag amq.ctag-pD6xnG3jXebiMuUGoVM60w (product-pub); Consumer@397d1cf7: tags=[[amq.ctag-pD6xnG3jXebiMuUGoVM60w]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683], acknowledgeMode=AUTO local queue size=0
+2022-11-09 13:33:19,919 DEBUG org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] Cancelling Consumer@397d1cf7: tags=[[amq.ctag-pD6xnG3jXebiMuUGoVM60w]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683], acknowledgeMode=AUTO local queue size=0
+2022-11-09 13:33:19,920 DEBUG org.springframework.amqp.rabbit.listener.BlockingQueueConsumer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683]
+2022-11-09 13:33:19,920 DEBUG org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-1] Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,3)
+2022-11-09 13:33:19,923 INFO org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Successfully waited for workers to finish.
+2022-11-09 13:33:19,931 DEBUG org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer [SpringApplicationShutdownHook] Shutting down Rabbit listener container
+2022-11-09 13:33:19,933 INFO org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Waiting for workers to finish.
+2022-11-09 13:33:19,933 DEBUG org.springframework.amqp.rabbit.listener.BlockingQueueConsumer$InternalConsumer [pool-3-thread-13] Received cancelOk for tag amq.ctag-BBHnOpMe-T-FZZstTT1vfQ (rating-pub); Consumer@5676d93b: tags=[[amq.ctag-BBHnOpMe-T-FZZstTT1vfQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683], acknowledgeMode=AUTO local queue size=0
+2022-11-09 13:33:19,966 DEBUG org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] Cancelling Consumer@5676d93b: tags=[[amq.ctag-BBHnOpMe-T-FZZstTT1vfQ]], channel=Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683], acknowledgeMode=AUTO local queue size=0
+2022-11-09 13:33:19,966 DEBUG org.springframework.amqp.rabbit.listener.BlockingQueueConsumer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] Closing Rabbit Channel: Cached Rabbit Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4), conn: Proxy@3f92301 Shared Rabbit Connection: SimpleConnection@2c0f9003 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 49683]
+2022-11-09 13:33:19,966 DEBUG org.springframework.amqp.rabbit.connection.CachingConnectionFactory$CachedChannelInvocationHandler [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#3-1] Closing cached Channel: AMQChannel(amqp://guest@127.0.0.1:5672/,4)
+2022-11-09 13:33:19,968 INFO org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Successfully waited for workers to finish.
+2022-11-09 13:33:19,969 DEBUG org.springframework.context.support.DefaultLifecycleProcessor [SpringApplicationShutdownHook] Bean 'org.springframework.amqp.rabbit.config.internalRabbitListenerEndpointRegistry' completed its stop procedure
+2022-11-09 13:33:19,970 DEBUG org.springframework.context.support.DefaultLifecycleProcessor [SpringApplicationShutdownHook] Bean 'webServerGracefulShutdown' completed its stop procedure
+2022-11-09 13:33:19,970 DEBUG org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [SpringApplicationShutdownHook] Stopping beans in phase 2147483646
+2022-11-09 13:33:19,997 DEBUG org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinAutoConfiguration$1 [Thread-6] Flushing done - closing the reporter
+2022-11-09 13:33:20,008 DEBUG org.springframework.context.support.DefaultLifecycleProcessor [SpringApplicationShutdownHook] Bean 'webServerStartStop' completed its stop procedure
+2022-11-09 13:33:20,008 DEBUG org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [SpringApplicationShutdownHook] Stopping beans in phase 0
+2022-11-09 13:33:20,011 DEBUG org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer [SpringApplicationShutdownHook] Shutdown ignored - container is not active already
+2022-11-09 13:33:20,011 DEBUG org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer [SpringApplicationShutdownHook] Shutdown ignored - container is not active already
+2022-11-09 13:33:20,012 DEBUG org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer [SpringApplicationShutdownHook] Shutdown ignored - container is not active already
+2022-11-09 13:33:20,012 DEBUG org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer [SpringApplicationShutdownHook] Shutdown ignored - container is not active already
+2022-11-09 13:33:20,013 DEBUG org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringApplicationShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-11-09 13:33:20,013 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-09 13:33:20,013 DEBUG org.hibernate.internal.SessionFactoryImpl [SpringApplicationShutdownHook] HHH000031: Closing
+2022-11-09 13:33:20,013 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-11-09 13:33:20,014 DEBUG org.hibernate.type.spi.TypeConfiguration$Scope [SpringApplicationShutdownHook] Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@328d12e7] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@7eca5c]
+2022-11-09 13:33:20,014 DEBUG org.hibernate.service.internal.AbstractServiceRegistryImpl [SpringApplicationShutdownHook] Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2022-11-09 13:33:20,015 DEBUG org.hibernate.boot.registry.internal.BootstrapServiceRegistryImpl [SpringApplicationShutdownHook] Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn0: url=jdbc:h2:mem:testdb user=USER: (connection is dead)
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn1: url=jdbc:h2:mem:testdb user=USER: (connection is dead)
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection closer] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn2: url=jdbc:h2:mem:testdb user=USER: (connection is dead)
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection closer] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn3: url=jdbc:h2:mem:testdb user=USER: (connection is dead)
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection closer] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn4: url=jdbc:h2:mem:testdb user=USER: (connection is dead)
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection closer] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn5: url=jdbc:h2:mem:testdb user=USER: (connection is dead)
+2022-11-09 13:33:20,018 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection closer] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:33:20,019 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn6: url=jdbc:h2:mem:testdb user=USER: (connection is dead)
+2022-11-09 13:33:20,019 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection closer] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:33:20,019 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn7: url=jdbc:h2:mem:testdb user=USER: (connection is dead)
+2022-11-09 13:33:20,020 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection closer] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:33:20,020 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn8: url=jdbc:h2:mem:testdb user=USER: (connection is dead)
+2022-11-09 13:33:20,020 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection closer] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:33:20,020 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn9: url=jdbc:h2:mem:testdb user=USER: (connection is dead)
+2022-11-09 13:33:20,020 DEBUG com.zaxxer.hikari.pool.HikariPool [HikariPool-1 connection closer] HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+2022-11-09 13:33:20,020 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection conn10: url=jdbc:h2:mem:testdb user=USER
+2022-11-09 13:33:20,021 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection conn11: url=jdbc:h2:mem:testdb user=USER
+2022-11-09 13:33:20,021 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection conn12: url=jdbc:h2:mem:testdb user=USER
+2022-11-09 13:33:20,021 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection conn13: url=jdbc:h2:mem:testdb user=USER
+2022-11-09 13:33:20,022 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection conn14: url=jdbc:h2:mem:testdb user=USER
+2022-11-09 13:33:20,022 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection conn15: url=jdbc:h2:mem:testdb user=USER
+2022-11-09 13:33:20,022 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection conn16: url=jdbc:h2:mem:testdb user=USER
+2022-11-09 13:33:20,022 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection conn17: url=jdbc:h2:mem:testdb user=USER
+2022-11-09 13:33:20,022 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection conn18: url=jdbc:h2:mem:testdb user=USER
+2022-11-09 13:33:20,023 DEBUG com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator [HikariPool-1 connection adder] HikariPool-1 - Added connection conn19: url=jdbc:h2:mem:testdb user=USER
+2022-11-09 13:33:20,246 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [SpringApplicationShutdownHook] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor'
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1514)
+	at org.h2.jdbc.JdbcConnection.checkClosed(JdbcConnection.java:1490)
+	at org.h2.jdbc.JdbcConnection.clearWarnings(JdbcConnection.java:703)
+	at com.zaxxer.hikari.pool.ProxyConnection.close(ProxyConnection.java:267)
+	at org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration$NonEmbeddedInMemoryDatabaseShutdownExecutor$InMemoryDatabase.lambda$new$1(DevToolsDataSourceAutoConfiguration.java:142)
+	at org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration$NonEmbeddedInMemoryDatabaseShutdownExecutor$InMemoryDatabase.shutdown(DevToolsDataSourceAutoConfiguration.java:159)
+	at org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration$NonEmbeddedInMemoryDatabaseShutdownExecutor.destroy(DevToolsDataSourceAutoConfiguration.java:105)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:212)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1152)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1145)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:172)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:137)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:33:20,254 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-11-09 13:33:20,255 DEBUG com.zaxxer.hikari.pool.HikariPool [SpringApplicationShutdownHook] HikariPool-1 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+2022-11-09 13:33:20,255 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn10: url=jdbc:h2:mem:testdb user=USER: (connection evicted)
+2022-11-09 13:33:20,255 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn11: url=jdbc:h2:mem:testdb user=USER: (connection evicted)
+2022-11-09 13:33:20,256 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn12: url=jdbc:h2:mem:testdb user=USER: (connection evicted)
+2022-11-09 13:33:20,256 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn13: url=jdbc:h2:mem:testdb user=USER: (connection evicted)
+2022-11-09 13:33:20,257 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn14: url=jdbc:h2:mem:testdb user=USER: (connection evicted)
+2022-11-09 13:33:20,258 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn15: url=jdbc:h2:mem:testdb user=USER: (connection evicted)
+2022-11-09 13:33:20,258 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn16: url=jdbc:h2:mem:testdb user=USER: (connection evicted)
+2022-11-09 13:33:20,258 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn17: url=jdbc:h2:mem:testdb user=USER: (connection evicted)
+2022-11-09 13:33:20,258 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn18: url=jdbc:h2:mem:testdb user=USER: (connection evicted)
+2022-11-09 13:33:20,259 DEBUG com.zaxxer.hikari.pool.PoolBase [HikariPool-1 connection closer] HikariPool-1 - Closing connection conn19: url=jdbc:h2:mem:testdb user=USER: (connection evicted)
+2022-11-09 13:33:20,259 DEBUG com.zaxxer.hikari.pool.HikariPool [SpringApplicationShutdownHook] HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+2022-11-09 13:33:20,259 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-11-09 13:33:20,260 DEBUG reactor.util.Loggers$Slf4JLogger [SpringApplicationShutdownHook] Reset onEachOperator: org.springframework.cloud.sleuth.autoconfig.instrument.reactor.TraceReactorAutoConfiguration$TraceReactorConfiguration
+2022-11-09 13:33:20,260 DEBUG reactor.util.Loggers$Slf4JLogger [SpringApplicationShutdownHook] Reset onLastOperator: org.springframework.cloud.sleuth.autoconfig.instrument.reactor.TraceReactorAutoConfiguration$TraceReactorConfiguration
+2022-11-09 13:33:20,260 INFO com.netflix.discovery.DiscoveryClient [SpringApplicationShutdownHook] Shutting down DiscoveryClient ...
+2022-11-09 13:33:23,279 INFO com.netflix.discovery.DiscoveryClient [SpringApplicationShutdownHook] Unregistering ...
+2022-11-09 13:33:23,281 ERROR com.netflix.discovery.DiscoveryClient [SpringApplicationShutdownHook] DiscoveryClient_DASHBOARD-SERVICE/LAPTOP-17K2CE04:dashboard-service:9100 - de-registration failedThere is no known eureka server; cluster server list is empty
+com.netflix.discovery.shared.transport.TransportException: There is no known eureka server; cluster server list is empty
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:108)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:972)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:948)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:347)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:177)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:196)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:189)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:136)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:212)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1152)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1145)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1106)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1075)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:172)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1021)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:137)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-11-09 13:33:23,285 INFO com.netflix.discovery.DiscoveryClient [SpringApplicationShutdownHook] Completed shut down of DiscoveryClient
+2022-11-09 13:33:30,239 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Creating new Restarter for thread Thread[main,5,main]
+2022-11-09 13:33:30,241 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Immediately restarting application
+2022-11-09 13:33:30,242 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Starting application net.torrydev.microservices.dashboardservice.DashboardServiceApplication with URLs [file:/C:/Users/torry/Documents/Projects/JavaProjects/Event-Driven/dashboard-service/target/classes/]
+2022-11-09 13:33:30,274 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at net.torrydev.microservices.dashboardservice.DashboardServiceApplication.main(DashboardServiceApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
+	... 23 common frames omitted
+2022-11-09 13:36:17,427 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Creating new Restarter for thread Thread[main,5,main]
+2022-11-09 13:36:17,429 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Immediately restarting application
+2022-11-09 13:36:17,429 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Starting application net.torrydev.microservices.dashboardservice.DashboardServiceApplication with URLs [file:/C:/Users/torry/Documents/Projects/JavaProjects/Event-Driven/dashboard-service/target/classes/]
+2022-11-09 13:36:17,454 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at net.torrydev.microservices.dashboardservice.DashboardServiceApplication.main(DashboardServiceApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
+	... 23 common frames omitted
+2022-11-09 13:36:37,830 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Creating new Restarter for thread Thread[main,5,main]
+2022-11-09 13:36:37,833 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Immediately restarting application
+2022-11-09 13:36:37,833 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Starting application net.torrydev.microservices.dashboardservice.DashboardServiceApplication with URLs [file:/C:/Users/torry/Documents/Projects/JavaProjects/Event-Driven/dashboard-service/target/classes/]
+2022-11-09 13:36:37,858 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at net.torrydev.microservices.dashboardservice.DashboardServiceApplication.main(DashboardServiceApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
+	... 23 common frames omitted
+2022-11-09 13:37:01,122 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Creating new Restarter for thread Thread[main,5,main]
+2022-11-09 13:37:01,124 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Immediately restarting application
+2022-11-09 13:37:01,124 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Starting application net.torrydev.microservices.dashboardservice.DashboardServiceApplication with URLs [file:/C:/Users/torry/Documents/Projects/JavaProjects/Event-Driven/dashboard-service/target/classes/]
+2022-11-09 13:37:01,148 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at net.torrydev.microservices.dashboardservice.DashboardServiceApplication.main(DashboardServiceApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
+	... 23 common frames omitted
+2022-11-09 13:37:33,174 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Creating new Restarter for thread Thread[main,5,main]
+2022-11-09 13:37:33,176 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Immediately restarting application
+2022-11-09 13:37:33,176 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Starting application net.torrydev.microservices.dashboardservice.DashboardServiceApplication with URLs [file:/C:/Users/torry/Documents/Projects/JavaProjects/Event-Driven/dashboard-service/target/classes/]
+2022-11-09 13:37:33,200 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at net.torrydev.microservices.dashboardservice.DashboardServiceApplication.main(DashboardServiceApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
+	... 23 common frames omitted
+2022-11-09 13:39:21,419 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Creating new Restarter for thread Thread[main,5,main]
+2022-11-09 13:39:21,421 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Immediately restarting application
+2022-11-09 13:39:21,421 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Starting application net.torrydev.microservices.dashboardservice.DashboardServiceApplication with URLs [file:/C:/Users/torry/Documents/Projects/JavaProjects/Event-Driven/dashboard-service/target/classes/]
+2022-11-09 13:39:21,446 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at net.torrydev.microservices.dashboardservice.DashboardServiceApplication.main(DashboardServiceApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
+	... 23 common frames omitted
+2022-11-09 13:39:43,746 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Creating new Restarter for thread Thread[main,5,main]
+2022-11-09 13:39:43,748 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Immediately restarting application
+2022-11-09 13:39:43,748 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Starting application net.torrydev.microservices.dashboardservice.DashboardServiceApplication with URLs [file:/C:/Users/torry/Documents/Projects/JavaProjects/Event-Driven/dashboard-service/target/classes/]
+2022-11-09 13:39:43,769 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at net.torrydev.microservices.dashboardservice.DashboardServiceApplication.main(DashboardServiceApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
+	... 23 common frames omitted
+2022-11-09 13:40:19,998 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Creating new Restarter for thread Thread[main,5,main]
+2022-11-09 13:40:20,000 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Immediately restarting application
+2022-11-09 13:40:20,000 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Starting application net.torrydev.microservices.dashboardservice.DashboardServiceApplication with URLs [file:/C:/Users/torry/Documents/Projects/JavaProjects/Event-Driven/dashboard-service/target/classes/]
+2022-11-09 13:40:20,026 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:328)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:282)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:240)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:297)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at net.torrydev.microservices.dashboardservice.DashboardServiceApplication.main(DashboardServiceApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@8:79 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:232)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:313)
+	... 23 common frames omitted
+2022-11-09 13:41:35,836 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting DashboardServiceApplication using Java 17.0.2 on LAPTOP-17K2CE04 with PID 10988 (C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\dashboard-service\target\classes started by torry in C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\dashboard-service)
+2022-11-09 13:41:35,840 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-11-09 13:41:35,840 INFO org.springframework.boot.SpringApplication [restartedMain] The following 1 profile is active: "test"
+2022-11-09 13:41:35,841 DEBUG org.springframework.boot.SpringApplication [restartedMain] Loading source class net.torrydev.microservices.dashboardservice.DashboardServiceApplication
+2022-11-09 13:41:35,912 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Matching URLs for reloading : [file:/C:/Users/torry/Documents/Projects/JavaProjects/Event-Driven/dashboard-service/target/classes/]
+2022-11-09 13:41:35,912 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Included patterns for restart : []
+2022-11-09 13:41:35,912 DEBUG org.springframework.boot.logging.DeferredLog [restartedMain] Excluded patterns for restart : [/spring-boot-starter-[\w-]+/, /spring-boot/(bin|build|out)/, /spring-boot-starter/(bin|build|out)/, /spring-boot-devtools/(bin|build|out)/, /spring-boot-actuator/(bin|build|out)/, /spring-boot-autoconfigure/(bin|build|out)/]
+2022-11-09 13:41:35,912 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-09 13:41:35,914 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-09 13:41:35,915 DEBUG org.springframework.context.support.AbstractApplicationContext [restartedMain] Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5e83e37a
+2022-11-09 13:41:35,944 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2022-11-09 13:41:35,968 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2022-11-09 13:41:36,066 DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider [restartedMain] Identified candidate component class: file [C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\dashboard-service\target\classes\net\torrydev\microservices\dashboardservice\config\RabbitMqConfig.class]
+2022-11-09 13:41:36,079 DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider [restartedMain] Identified candidate component class: file [C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\dashboard-service\target\classes\net\torrydev\microservices\dashboardservice\services\AppUser_Consumer_Service.class]
+2022-11-09 13:41:36,081 DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider [restartedMain] Identified candidate component class: file [C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\dashboard-service\target\classes\net\torrydev\microservices\dashboardservice\services\AppUser_Service_Consumer.class]
+2022-11-09 13:41:36,082 DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider [restartedMain] Identified candidate component class: file [C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\dashboard-service\target\classes\net\torrydev\microservices\dashboardservice\services\Comment_Service_Consumer.class]
+2022-11-09 13:41:36,085 DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider [restartedMain] Identified candidate component class: file [C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\dashboard-service\target\classes\net\torrydev\microservices\dashboardservice\services\Product_Service_Consumer.class]
+2022-11-09 13:41:36,086 DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider [restartedMain] Identified candidate component class: file [C:\Users\torry\Documents\Projects\JavaProjects\Event-Driven\dashboard-service\target\classes\net\torrydev\microservices\dashboardservice\services\Rating_Service_Consumer.class]
+2022-11-09 13:41:37,223 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-09 13:41:37,237 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+2022-11-09 13:41:37,238 DEBUG org.springframework.boot.autoconfigure.AutoConfigurationPackages$BasePackages [restartedMain] @EnableAutoConfiguration was declared on a class in the package 'net.torrydev.microservices.dashboardservice'. Automatic @Repository and @Entity scanning is enabled.
+2022-11-09 13:41:37,240 DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Scanning for JPA repositories in packages net.torrydev.microservices.dashboardservice.
+2022-11-09 13:41:37,248 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2022-11-09 13:41:37,652 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'refreshScope'
+2022-11-09 13:41:37,657 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$RefreshScopeBeanDefinitionEnhancer'
+2022-11-09 13:41:37,658 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'braveReactorContextBeanDefinitionRegistryPostProcessor'
+2022-11-09 13:41:37,662 DEBUG org.springframework.cloud.sleuth.autoconfig.brave.BraveBridgeConfiguration$BraveReactorContextBeanDefinitionRegistryPostProcessor [restartedMain] Wrapped Reactor's context into a Brave representation
+2022-11-09 13:41:37,739 DEBUG org.springframework.cloud.context.scope.GenericScope [restartedMain] Generating bean factory id from names: [amqpAdmin, apacheHttpClientBuilder, apacheHttpClientFactory, appUser_Consumer_Service, appUser_Service_Consumer, applicationAvailability, applicationTaskExecutor, asyncLoadBalancerInterceptor, asyncRestTemplateCustomizer, baggagePropagationFactoryBuilder, basicErrorController, beanNameHandlerMapping, beanNameViewResolver, blockingLoadBalancerClient, braveCurrentTraceContext, braveHttpClientHandler, braveHttpServerHandler, bravePropagator, braveReactorContextBeanDefinitionRegistryPostProcessor, braveSpanCustomizer, braveSpanFromContextRetriever, braveTracer, caffeineWarnLogger, characterEncodingFilter, classLoaderMetrics, classPathFileSystemWatcher, classPathRestartStrategy, comment_Service_Consumer, commonsFeatures, compositeCompatibilityVerifier, compositeDiscoveryClient, compositePropagationFactorySupplier, conditionEvaluationDeltaLoggingListener, configDataContextRefresher, configurationPropertiesBeans, configurationPropertiesRebinder, connManFactory, connectionFactory, controllerEndpointDiscoverer, controllerEndpointHandlerMapping, controllerExposeExcludePropertyEndpointFilter, conventionErrorViewResolver, correlationScopeDecorator, correlationScopeDecoratorBuilder, dashboardServiceApplication, dataSource, dataSourceScriptDatabaseInitializer, dbHealthContributor, default.org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration.LoadBalancerClientSpecification, default.org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration.LoadBalancerClientSpecification, default.org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration.LoadBalancerClientSpecification, defaultEurekaClientHttpRequestFactorySupplier, defaultLoadBalancerCacheManager, defaultServletHandlerMapping, defaultSkipPatternBean, defaultSpanNamer, defaultTemplateResolver, defaultTraceSampler, defaultViewResolver, defaultZipkinUrlExtractor, defaultsBindHandlerAdvisor, directRabbitListenerContainerFactoryConfigurer, discoveryClient, discoveryClientHealthIndicator, discoveryCompositeHealthContributor, diskSpaceHealthIndicator, diskSpaceMetrics, dispatcherServlet, dispatcherServletRegistration, emBeanDefinitionRegistrarPostProcessor, endpointCachingOperationInvokerAdvisor, endpointMediaTypes, endpointOperationParameterMapper, entityManagerFactory, entityManagerFactoryBuilder, environmentManager, error, errorAttributes, errorPageCustomizer, errorPageRegistrarBeanPostProcessor, eurekaApplicationInfoManager, eurekaAutoServiceRegistration, eurekaClient, eurekaClientConfigBean, eurekaFeature, eurekaHealthIndicator, eurekaInstanceConfigBean, eurekaLoadBalancerProperties, eurekaRegistration, eurekaServiceRegistry, executorBeanPostProcessor, fileDescriptorMetrics, fileSystemWatcherFactory, flashMapManager, formContentFilter, getMessageConverter, gson, gsonBuilder, h2Console, handlerExceptionResolver, handlerFunctionAdapter, healthContributorRegistry, healthEndpoint, healthEndpointGroups, healthEndpointGroupsBeanPostProcessor, healthEndpointWebExtension, healthEndpointWebMvcHandlerMapping, healthHttpCodeStatusMapper, healthStatusAggregator, hikariPoolDataSourceMetadataProvider, hooksRefresher, httpRequestHandlerAdapter, httpTracing, inMemoryDatabaseShutdownExecutor, inetUtils, inetUtilsProperties, jacksonGeoModule, jacksonObjectMapper, jacksonObjectMapperBuilder, java.lang.Object, java8TimeDialect, jdbcTemplate, jpaContext, jpaMappingContext, jpaVendorAdapter, jsonComponentModule, jvmGcMetrics, jvmHeapPressureMetrics, jvmMemoryMetrics, jvmThreadMetrics, lifecycleProcessor, liveReloadServer, liveReloadServerEventListener, loadBalancedAsyncRestTemplateInitializer, loadBalancedRestTemplateInitializerDeprecated, loadBalancedRetryFactory, loadBalancerClientFactory, loadBalancerClientZipkinLoadBalancer, loadBalancerClientsDefaultsMappingsProvider, loadBalancerInterceptor, loadBalancerRequestFactory, loadBalancerServiceInstanceCookieTransformer, localeCharsetMappingsCustomizer, localeResolver, logbackMetrics, loggingRebinder, management.endpoint.health-org.springframework.boot.actuate.autoconfigure.health.HealthEndpointProperties, management.endpoints.web-org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointProperties, management.endpoints.web.cors-org.springframework.boot.actuate.autoconfigure.endpoint.web.CorsEndpointProperties, management.health.db-org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorProperties, management.health.diskspace-org.springframework.boot.actuate.autoconfigure.system.DiskSpaceHealthIndicatorProperties, management.info-org.springframework.boot.actuate.autoconfigure.info.InfoContributorProperties, management.metrics-org.springframework.boot.actuate.autoconfigure.metrics.MetricsProperties, management.metrics.export.simple-org.springframework.boot.actuate.autoconfigure.metrics.export.simple.SimpleProperties, management.server-org.springframework.boot.actuate.autoconfigure.web.server.ManagementServerProperties, managementServletContext, mappingJackson2HttpMessageConverter, messageConverters, messagingTracing, meterRegistryPostProcessor, metricsHttpClientUriTagFilter, metricsHttpServerUriTagFilter, metricsRepositoryMethodInvocationListener, metricsRepositoryMethodInvocationListenerBeanPostProcessor, metricsRestTemplateCustomizer, metricsWebMvcConfigurer, micrometerClock, multipartConfigElement, multipartResolver, mvcContentNegotiationManager, mvcConversionService, mvcHandlerMappingIntrospector, mvcPathMatcher, mvcPatternParser, mvcResourceUrlProvider, mvcUriComponentsContributor, mvcUrlPathHelper, mvcValidator, mvcViewResolver, namedParameterJdbcTemplate, newSpanParser, noOpTagValueResolver, openEntityManagerInViewInterceptor, openEntityManagerInViewInterceptorConfigurer, optionalLiveReloadServer, org.springframework.amqp.rabbit.config.internalRabbitListenerAnnotationProcessor, org.springframework.amqp.rabbit.config.internalRabbitListenerEndpointRegistry, org.springframework.aop.config.internalAutoProxyCreator, org.springframework.boot.actuate.autoconfigure.amqp.RabbitHealthContributorAutoConfiguration, org.springframework.boot.actuate.autoconfigure.availability.AvailabilityHealthContributorAutoConfiguration, org.springframework.boot.actuate.autoconfigure.endpoint.EndpointAutoConfiguration, org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration, org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration, org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration, org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointAutoConfiguration$WebEndpointServletConfiguration, org.springframework.boot.actuate.autoconfigure.endpoint.web.servlet.WebMvcEndpointManagementContextConfiguration, org.springframework.boot.actuate.autoconfigure.health.HealthContributorAutoConfiguration, org.springframework.boot.actuate.autoconfigure.health.HealthEndpointAutoConfiguration, org.springframework.boot.actuate.autoconfigure.health.HealthEndpointConfiguration, org.springframework.boot.actuate.autoconfigure.health.HealthEndpointWebExtensionConfiguration, org.springframework.boot.actuate.autoconfigure.health.HealthEndpointWebExtensionConfiguration$MvcAdditionalHealthEndpointPathsConfiguration, org.springframework.boot.actuate.autoconfigure.health.ReactiveHealthEndpointConfiguration, org.springframework.boot.actuate.autoconfigure.info.InfoContributorAutoConfiguration, org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthContributorAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.CompositeMeterRegistryAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.JvmMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.LogbackMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.MetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.SystemMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.amqp.RabbitMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.data.RepositoryMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.export.simple.SimpleMetricsExportAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.integration.IntegrationMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.jdbc.DataSourcePoolMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.jdbc.DataSourcePoolMetricsAutoConfiguration$DataSourcePoolMetadataMetricsConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.jdbc.DataSourcePoolMetricsAutoConfiguration$HikariDataSourceMetricsConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.startup.StartupTimeMetricsListenerAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.task.TaskExecutorMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.web.client.HttpClientMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.web.client.RestTemplateMetricsConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.web.servlet.WebMvcMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.metrics.web.tomcat.TomcatMetricsAutoConfiguration, org.springframework.boot.actuate.autoconfigure.system.DiskSpaceHealthContributorAutoConfiguration, org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextAutoConfiguration, org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextAutoConfiguration$SameManagementContextConfiguration, org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextAutoConfiguration$SameManagementContextConfiguration$EnableSameManagementContextConfiguration, org.springframework.boot.actuate.autoconfigure.web.servlet.ServletManagementContextAutoConfiguration, org.springframework.boot.autoconfigure.AutoConfigurationPackages, org.springframework.boot.autoconfigure.amqp.RabbitAnnotationDrivenConfiguration, org.springframework.boot.autoconfigure.amqp.RabbitAnnotationDrivenConfiguration$EnableRabbitConfiguration, org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration, org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration$MessagingTemplateConfiguration, org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration$RabbitConnectionFactoryCreator, org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration$RabbitTemplateConfiguration, org.springframework.boot.autoconfigure.aop.AopAutoConfiguration, org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$AspectJAutoProxyingConfiguration, org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$AspectJAutoProxyingConfiguration$CglibAutoProxyConfiguration, org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration, org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration, org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration, org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration, org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration, org.springframework.boot.autoconfigure.http.GsonHttpMessageConvertersConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration, org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration, org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration, org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration, org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari, org.springframework.boot.autoconfigure.jdbc.DataSourceJmxConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceJmxConfiguration$Hikari, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$JdbcTransactionManagerConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateConfiguration, org.springframework.boot.autoconfigure.jdbc.NamedParameterJdbcTemplateConfiguration, org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration, org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration, org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration, org.springframework.boot.autoconfigure.sql.init.DataSourceInitializationConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.TemplateEngineConfigurations$DefaultTemplateEngineConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafJava8TimeDialect, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration$ThymeleafViewResolverConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration$CglibAutoProxyConfiguration, org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$TransactionTemplateConfiguration, org.springframework.boot.autoconfigure.transaction.jta.JtaAutoConfiguration, org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration, org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration, org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration, org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration, org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration, org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration, org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration, org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration, org.springframework.boot.context.internalConfigurationPropertiesBinder, org.springframework.boot.context.internalConfigurationPropertiesBinderFactory, org.springframework.boot.context.properties.BoundConfigurationProperties, org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor, org.springframework.boot.context.properties.EnableConfigurationPropertiesRegistrar.methodValidationExcludeFilter, org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration, org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration$DatabaseShutdownExecutorEntityManagerFactoryDependsOnPostProcessor, org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration, org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$LiveReloadConfiguration, org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartConfiguration, org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor, org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration, org.springframework.cloud.autoconfigure.LifecycleMvcEndpointAutoConfiguration, org.springframework.cloud.autoconfigure.PauseResumeEndpointsConfiguration, org.springframework.cloud.autoconfigure.RefreshAutoConfiguration, org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$JpaInvokerConfiguration, org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$RefreshScopeBeanDefinitionEnhancer, org.springframework.cloud.autoconfigure.RefreshEndpointAutoConfiguration, org.springframework.cloud.autoconfigure.RefreshEndpointAutoConfiguration$RefreshEndpointConfiguration, org.springframework.cloud.autoconfigure.RestartEndpointWithoutIntegrationConfiguration, org.springframework.cloud.client.CommonsClientAutoConfiguration, org.springframework.cloud.client.CommonsClientAutoConfiguration$ActuatorConfiguration, org.springframework.cloud.client.CommonsClientAutoConfiguration$DiscoveryLoadBalancerConfiguration, org.springframework.cloud.client.ReactiveCommonsClientAutoConfiguration, org.springframework.cloud.client.discovery.composite.CompositeDiscoveryClientAutoConfiguration, org.springframework.cloud.client.discovery.simple.SimpleDiscoveryClientAutoConfiguration, org.springframework.cloud.client.loadbalancer.AsyncLoadBalancerAutoConfiguration, org.springframework.cloud.client.loadbalancer.AsyncLoadBalancerAutoConfiguration$AsyncRestTemplateCustomizerConfig, org.springframework.cloud.client.loadbalancer.AsyncLoadBalancerAutoConfiguration$LoadBalancerInterceptorConfig, org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration, org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$RetryAutoConfiguration, org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$RetryInterceptorAutoConfiguration, org.springframework.cloud.client.loadbalancer.LoadBalancerDefaultMappingsProviderAutoConfiguration, org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationAutoConfiguration, org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationConfiguration, org.springframework.cloud.client.serviceregistry.ServiceRegistryAutoConfiguration, org.springframework.cloud.client.serviceregistry.ServiceRegistryAutoConfiguration$ServiceRegistryEndpointConfiguration, org.springframework.cloud.commons.config.CommonsConfigAutoConfiguration, org.springframework.cloud.commons.httpclient.HttpClientConfiguration, org.springframework.cloud.commons.httpclient.HttpClientConfiguration$ApacheHttpClientConfiguration, org.springframework.cloud.commons.util.UtilAutoConfiguration, org.springframework.cloud.configuration.CompatibilityVerifierAutoConfiguration, org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration, org.springframework.cloud.loadbalancer.config.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerRetryConfig, org.springframework.cloud.loadbalancer.config.LoadBalancerAutoConfiguration, org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration, org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$DefaultLoadBalancerCacheManagerConfiguration, org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCacheManagerWarnConfiguration, org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration, org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$EurekaHealthIndicatorConfiguration, org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration, org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration, org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration$EurekaClientConfigurationRefresher, org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration, org.springframework.cloud.netflix.eureka.loadbalancer.LoadBalancerEurekaAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.SleuthAnnotationConfiguration, org.springframework.cloud.sleuth.autoconfig.TraceConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.BraveAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.BraveBaggageConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.BraveBridgeConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.BraveSamplerConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.BraveSamplerConfiguration$RefreshScopedSamplerConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.instrument.messaging.BraveMessagingAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.instrument.messaging.BraveMessagingAutoConfiguration$SleuthRabbitConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.instrument.rpc.BraveRpcAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.instrument.web.BraveHttpBridgeConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.instrument.web.BraveHttpConfiguration, org.springframework.cloud.sleuth.autoconfig.brave.instrument.web.BraveHttpConfiguration$BraveWebFilterConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.async.TraceAsyncAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.async.TraceAsyncDefaultAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.async.TraceAsyncDefaultAutoConfiguration$DefaultAsyncConfigurerSupport, org.springframework.cloud.sleuth.autoconfig.instrument.circuitbreaker.TraceCircuitBreakerAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.jdbc.TraceJdbcAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.messaging.TraceSpringMessagingAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.reactor.TraceReactorAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.reactor.TraceReactorAutoConfiguration$TraceReactorConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.reactor.TraceReactorAutoConfiguration$TraceReactorConfiguration$HooksRefresherConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.scheduling.TraceSchedulingAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.tx.TraceTxAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.web.SkipPatternConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.web.SkipPatternConfiguration$ActuatorSkipPatternProviderConfig, org.springframework.cloud.sleuth.autoconfig.instrument.web.SkipPatternConfiguration$DefaultSkipPatternConfig, org.springframework.cloud.sleuth.autoconfig.instrument.web.SkipPatternConfiguration$ManagementSkipPatternProviderConfig, org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebMvcConfigurer, org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$TraceTomcatConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$TraceWebMvcAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.web.client.TraceWebAsyncClientAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.web.client.TraceWebClientAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.instrument.web.client.TraceWebClientAutoConfiguration$RestTemplateConfig, org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinAutoConfiguration, org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinAutoConfiguration$DefaultEndpointLocatorConfiguration, org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinAutoConfiguration$TraceMetricsMicrometerConfiguration, org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinAutoConfiguration$TraceMetricsMicrometerConfiguration$NoReporterMetricsBeanConfiguration, org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinBraveConfiguration, org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinHttpSenderConfiguration, org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinHttpSenderConfiguration$DiscoveryClientZipkinUrlExtractorConfiguration, org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinHttpSenderConfiguration$DiscoveryClientZipkinUrlExtractorConfiguration$ZipkinClientLoadBalancedConfiguration, org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinHttpSenderConfiguration$ZipkinServletConfiguration, org.springframework.cloud.sleuth.instrument.web.mvc.SpanCustomizingAsyncHandlerInterceptor, org.springframework.context.annotation.internalAutowiredAnnotationProcessor, org.springframework.context.annotation.internalCommonAnnotationProcessor, org.springframework.context.annotation.internalConfigurationAnnotationProcessor, org.springframework.context.annotation.internalPersistenceAnnotationProcessor, org.springframework.context.event.internalEventListenerFactory, org.springframework.context.event.internalEventListenerProcessor, org.springframework.data.jpa.repository.support.JpaEvaluationContextExtension, org.springframework.data.jpa.util.JpaMetamodelCacheCleanup, org.springframework.data.web.config.ProjectingArgumentResolverRegistrar, org.springframework.data.web.config.SpringDataJacksonConfiguration, org.springframework.data.web.config.SpringDataWebConfiguration, org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration, org.springframework.transaction.config.internalTransactionAdvisor, org.springframework.transaction.config.internalTransactionalEventListenerFactory, pageableCustomizer, pageableResolver, parameterNamesModule, pathMappedEndpoints, persistenceExceptionTranslationPostProcessor, pingHealthContributor, platformTransactionManagerCustomizers, preserveErrorControllerTargetClassPostProcessor, processorMetrics, product_Service_Consumer, projectingArgumentResolverBeanPostProcessor, propertiesMeterFilter, propertySourcesPlaceholderConfigurer, rabbitConnectionFactoryBeanConfigurer, rabbitConnectionFactoryConfigurer, rabbitConnectionFactoryMetricsPostProcessor, rabbitHealthContributor, rabbitListenerContainerFactory, rabbitMessagingTemplate, rabbitMqConfig, rabbitTemplate, rabbitTemplateConfigurer, rating_Service_Consumer, reactiveHealthContributorRegistry, reactorSleuthMethodInvocationProcessor, refreshEventListener, refreshScope, refreshScopeHealthIndicator, reorderZipkinHandlersLast, repositoryTagsProvider, requestContextFilter, requestMappingHandlerAdapter, requestMappingHandlerMapping, resourceHandlerMapping, restTemplateBuilder, restTemplateBuilderConfigurer, restTemplateCustomizer, restTemplateDiscoveryClientOptionalArgs, restTemplateExchangeTagsProvider, restartingClassPathChangedEventListener, routerFunctionMapping, rpcTracing, scheduledBeanLazyInitializationExcludeFilter, scopedTarget.defaultTraceSampler, scopedTarget.eurekaApplicationInfoManager, scopedTarget.eurekaClient, scopedTarget.eurekaRegistration, server-org.springframework.boot.autoconfigure.web.ServerProperties, serviceManagementMetadataProvider, servletEndpointDiscoverer, servletEndpointRegistrar, servletExposeExcludePropertyEndpointFilter, servletWebChildContextFactory, servletWebServerFactoryCustomizer, simpleConfig, simpleControllerHandlerAdapter, simpleDiscoveryClient, simpleDiscoveryProperties, simpleMeterRegistry, simpleRabbitListenerContainerFactoryConfigurer, skipPatternForActuatorEndpointsSamePort, sleuthAdvisorConfig, sleuthContextListener, sleuthCurrentTraceContext, sleuthCurrentTraceContextBuilder, sleuthHttpClientSampler, sleuthMicrometerReporterMetrics, sleuthPropagationWithB3Baggage, sleuthRabbitBeanPostProcessor, sleuthSkipPatternProvider, sortCustomizer, sortResolver, spanCustomizer, spanIgnoringSpanExporter, spelTagValueExpressionResolver, spring.cloud.compatibility-verifier-org.springframework.cloud.configuration.CompatibilityVerifierProperties, spring.cloud.discovery.client.health-indicator-org.springframework.cloud.client.discovery.health.DiscoveryClientHealthIndicatorProperties, spring.cloud.loadbalancer-org.springframework.cloud.client.loadbalancer.LoadBalancerClientsProperties, spring.cloud.loadbalancer.cache-org.springframework.cloud.loadbalancer.cache.LoadBalancerCacheProperties, spring.cloud.refresh-org.springframework.cloud.autoconfigure.RefreshAutoConfiguration$RefreshProperties, spring.cloud.service-registry.auto-registration-org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationProperties, spring.data.web-org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties, spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties, spring.devtools-org.springframework.boot.devtools.autoconfigure.DevToolsProperties, spring.gson-org.springframework.boot.autoconfigure.gson.GsonProperties, spring.h2.console-org.springframework.boot.autoconfigure.h2.H2ConsoleProperties, spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties, spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties, spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties, spring.jpa-org.springframework.boot.autoconfigure.orm.jpa.JpaProperties, spring.jpa.hibernate-org.springframework.boot.autoconfigure.orm.jpa.HibernateProperties, spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties, spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties, spring.rabbitmq-org.springframework.boot.autoconfigure.amqp.RabbitProperties, spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties, spring.sleuth-org.springframework.cloud.sleuth.autoconfig.brave.SleuthProperties, spring.sleuth.async-org.springframework.cloud.sleuth.autoconfig.instrument.async.SleuthAsyncProperties, spring.sleuth.baggage-keys, spring.sleuth.baggage-org.springframework.cloud.sleuth.autoconfig.SleuthBaggageProperties, spring.sleuth.circuitbreaker-org.springframework.cloud.sleuth.autoconfig.instrument.circuitbreaker.SleuthCircuitBreakerProperties, spring.sleuth.http-org.springframework.cloud.sleuth.autoconfig.instrument.web.SleuthHttpProperties, spring.sleuth.integration-org.springframework.cloud.sleuth.autoconfig.instrument.messaging.SleuthIntegrationMessagingProperties, spring.sleuth.jdbc-org.springframework.cloud.sleuth.autoconfig.instrument.jdbc.TraceJdbcProperties, spring.sleuth.local-keys, spring.sleuth.log.slf4j.whitelisted-mdc-keys, spring.sleuth.messaging-org.springframework.cloud.sleuth.autoconfig.instrument.messaging.SleuthMessagingProperties, spring.sleuth.propagation-keys, spring.sleuth.propagation-org.springframework.cloud.sleuth.autoconfig.brave.SleuthPropagationProperties, spring.sleuth.reactor-org.springframework.cloud.sleuth.autoconfig.instrument.reactor.SleuthReactorProperties, spring.sleuth.sampler-org.springframework.cloud.sleuth.autoconfig.brave.SamplerProperties, spring.sleuth.scheduled-org.springframework.cloud.sleuth.autoconfig.instrument.scheduling.SleuthSchedulingProperties, spring.sleuth.span-filter-org.springframework.cloud.sleuth.autoconfig.SleuthSpanFilterProperties, spring.sleuth.tracer-org.springframework.cloud.sleuth.autoconfig.SleuthTracerProperties, spring.sleuth.web-org.springframework.cloud.sleuth.autoconfig.instrument.web.SleuthWebProperties, spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties, spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties, spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties, spring.thymeleaf-org.springframework.boot.autoconfigure.thymeleaf.ThymeleafProperties, spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties, spring.web-org.springframework.boot.autoconfigure.web.WebProperties, spring.zipkin-org.springframework.cloud.sleuth.zipkin2.ZipkinProperties, spring.zipkin.sender-org.springframework.cloud.sleuth.autoconfig.zipkin2.ZipkinSenderProperties, springBootVersionVerifier, springRabbitTracing, standardGsonBuilderCustomizer, standardJacksonObjectMapperBuilderCustomizer, startupTimeMetrics, stringHttpMessageConverter, taskExecutorBuilder, taskSchedulerBuilder, templateEngine, themeResolver, thymeleafViewResolver, tlsProperties, tomcatMetricsBinder, tomcatServletWebServerFactory, tomcatServletWebServerFactoryCustomizer, tomcatWebServerFactoryCustomizer, traceAsyncAspect, traceCircuitBreakerFactoryAspect, traceCompositeSpanHandler, traceDataSourceNameResolver, traceHikariListenerStrategySpanCustomizer, traceHookRegisteringBeanFactoryPostProcessor, traceMessagePropagationGetter, traceMessagePropagationSetter, traceMessagingAspect, tracePlatformTransactionManagerBeanPostProcessor, traceReactiveCircuitBreakerFactoryAspect, traceReactiveTransactionManagerBeanPostProcessor, traceRestTemplateBeanPostProcessor, traceRestTemplateCustomizer, traceSchedulingAspect, traceTomcatWebServerFactoryCustomizer, traceWebAspect, traceWebFilter, tracer, tracing, tracingClientHttpRequestInterceptor, transactionAttributeSource, transactionInterceptor, transactionManager, transactionTemplate, uptimeMetrics, viewControllerHandlerMapping, viewNameTranslator, viewResolver, webEndpointDiscoverer, webEndpointPathMapper, webEndpointServletHandlerMapping, webExposeExcludePropertyEndpointFilter, webMvcMetricsFilter, webMvcTagsProvider, webServerFactoryCustomizerBeanPostProcessor, websocketServletWebServerCustomizer, welcomePageHandlerMapping, xForwarderHeadersTransformer, zipkinEndpointLocator, zipkinReporter, zipkinRestTemplateCustomizer, zipkinRestTemplateProvider, zipkinSender, zipkinSpanHandler, zoneConfig]
+2022-11-09 13:41:37,745 INFO org.springframework.cloud.context.scope.GenericScope [restartedMain] BeanFactory id=f3b9c84f-2fa9-3e02-b152-5114327bea4e
+2022-11-09 13:41:37,748 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+2022-11-09 13:41:37,755 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'emBeanDefinitionRegistrarPostProcessor'
+2022-11-09 13:41:37,755 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor'
+2022-11-09 13:41:37,757 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration$DatabaseShutdownExecutorEntityManagerFactoryDependsOnPostProcessor'
+2022-11-09 13:41:37,837 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2022-11-09 13:41:37,839 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'preserveErrorControllerTargetClassPostProcessor'
+2022-11-09 13:41:37,844 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'traceHookRegisteringBeanFactoryPostProcessor'
+2022-11-09 13:41:37,845 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.cloud.sleuth.autoconfig.instrument.reactor.TraceReactorAutoConfiguration$TraceReactorConfiguration'
+2022-11-09 13:41:37,850 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2022-11-09 13:41:37,851 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+2022-11-09 13:41:37,861 DEBUG reactor.util.Loggers$Slf4JLogger [restartedMain] Using Slf4j logging framework
+2022-11-09 13:41:37,864 DEBUG reactor.util.Loggers$Slf4JLogger [restartedMain] Hooking onEachOperator: org.springframework.cloud.sleuth.autoconfig.instrument.reactor.TraceReactorAutoConfiguration$TraceReactorConfiguration
+2022-11-09 13:41:37,867 DEBUG reactor.util.Loggers$Slf4JLogger [restartedMain] Hooking onLastOperator: org.springframework.cloud.sleuth.autoconfig.instrument.reactor.TraceReactorAutoConfiguration$TraceReactorConfiguration
+2022-11-09 13:41:37,878 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2022-11-09 13:41:37,880 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2022-11-09 13:41:37,885 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2022-11-09 13:41:37,886 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+2022-11-09 13:41:37,887 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinder'
+2022-11-09 13:41:37,887 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.boot.context.internalConfigurationPropertiesBinderFactory'
+2022-11-09 13:41:37,894 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.amqp.rabbit.config.internalRabbitListenerAnnotationProcessor'
+2022-11-09 13:41:37,913 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'rabbitConnectionFactoryMetricsPostProcessor'
+2022-11-09 13:41:37,918 DEBUG org.springframework.beans.factory.support.ConstructorResolver [restartedMain] Autowiring by type from bean name 'rabbitConnectionFactoryMetricsPostProcessor' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5e83e37a'
+2022-11-09 13:41:37,919 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2022-11-09 13:41:37,962 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'persistenceExceptionTranslationPostProcessor'
+2022-11-09 13:41:37,964 DEBUG org.springframework.beans.factory.support.ConstructorResolver [restartedMain] Autowiring by type from bean name 'persistenceExceptionTranslationPostProcessor' via factory method to bean named 'environment'
+2022-11-09 13:41:37,972 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'webServerFactoryCustomizerBeanPostProcessor'
+2022-11-09 13:41:37,973 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'errorPageRegistrarBeanPostProcessor'
+2022-11-09 13:41:37,974 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'healthEndpointGroupsBeanPostProcessor'
+2022-11-09 13:41:37,976 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2022-11-09 13:41:37,976 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2022-11-09 13:41:37,977 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'sleuthAdvisorConfig'
+2022-11-09 13:41:37,977 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'org.springframework.cloud.sleuth.autoconfig.SleuthAnnotationConfiguration'
+2022-11-09 13:41:38,005 DEBUG org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory [restartedMain] Found AspectJ method: public java.lang.Object org.springframework.cloud.sleuth.instrument.async.TraceAsyncAspect.traceBackgroundThread(org.aspectj.lang.ProceedingJoinPoint) throws java.lang.Throwable
+2022-11-09 13:41:38,008 DEBUG org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory [restartedMain] Found AspectJ method: public java.lang.Object org.springframework.cloud.sleuth.instrument.circuitbreaker.TraceCircuitBreakerFactoryAspect.wrapFactory(org.aspectj.lang.ProceedingJoinPoint) throws java.lang.Throwable
+2022-11-09 13:41:38,009 DEBUG org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory [restartedMain] Found AspectJ method: public java.lang.Object org.springframework.cloud.sleuth.instrument.circuitbreaker.TraceReactiveCircuitBreakerFactoryAspect.wrapFactory(org.aspectj.lang.ProceedingJoinPoint) throws java.lang.Throwable
+2022-11-09 13:41:38,013 DEBUG org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory [restartedMain] Found AspectJ method: public java.lang.Object org.springframework.cloud.sleuth.instrument.messaging.TraceMessagingAspect.addTags(org.aspectj.lang.ProceedingJoinPoint) throws java.lang.Throwable
+2022-11-09 13:41:38,014 DEBUG org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory [restartedMain] Found AspectJ method: public java.lang.Object org.springframework.cloud.sleuth.instrument.web.TraceWebAspect.wrapWebAsyncTaskWithCorrelationId(org.aspectj.lang.ProceedingJoinPoint) throws java.lang.Throwable
+2022-11-09 13:41:38,015 DEBUG org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory [restartedMain] Found AspectJ method: public java.lang.Object org.springframework.cloud.sleuth.instrument.web.TraceWebAspect.wrapWithCorrelationId(org.aspectj.lang.ProceedingJoinPoint) throws java.lang.Throwable
+2022-11-09 13:41:38,016 DEBUG org.springframework.aop.aspectj.annotation.ReflectiveAspectJAdvisorFactory [restartedMain] Found AspectJ method: public java.lang.Object org.springframework.cloud.sleuth.instrument.scheduling.TraceSchedulingAspect.traceBackgroundThread(org.aspectj.lang.ProceedingJoinPoint) throws java.lang.Throwable
+2022-11-09 13:41:38,268 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'transactionAttributeSource'
+2022-11-09 13:41:38,284 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'transactionInterceptor'
+2022-11-09 13:41:38,285 DEBUG org.springframework.beans.factory.support.ConstructorResolver [restartedMain] Autowiring by type from bean name 'transactionInterceptor' via factory method to bean named 'transactionAttributeSource'
+2022-11-09 13:41:38,391 DEBUG org.springframework.beans.factory.support.ConstructorResolver [restartedMain] Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionAttributeSource'
+2022-11-09 13:41:38,392 DEBUG org.springframework.beans.factory.support.ConstructorResolver [restartedMain] Autowiring by type from bean name 'org.springframework.transaction.config.internalTransactionAdvisor' via factory method to bean named 'transactionInterceptor'
+2022-11-09 13:41:38,403 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'meterRegistryPostProcessor'
+2022-11-09 13:41:38,405 DEBUG org.springframework.beans.factory.support.ConstructorResolver [restartedMain] Autowiring by type from bean name 'meterRegistryPostProcessor' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5e83e37a'
+2022-11-09 13:41:38,409 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'metricsRepositoryMethodInvocationListenerBeanPostProcessor'
+2022-11-09 13:41:38,414 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'projectingArgumentResolverBeanPostProcessor'
+2022-11-09 13:41:38,439 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'configurationPropertiesBeans'
+2022-11-09 13:41:38,444 DEBUG org.springframework.beans.factory.support.DefaultSingletonBeanRegistry [restartedMain] Creating shared instance of singleton bean 'traceRestTemplateBeanPostProcessor'

@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: reviews-service
+ # config:
+  #  import: optional:configserver:http://localhost:8888/
+
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 means 100% logging 0.1 means 10% of logging will be traced
+
+  zipkin:
+    base-url: ${ZIPKIN-BASE-URL}
+service:
+  welcome:
+    msg: Welcome To Review App Service
+
+api:
+  gateway:
+    url: ${API_GATEWAY_BASE_URL:http://localhost:9001/}
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE:http://eureka-server:8761/eureka/}
+
+  instance: localhost
+
+server:
+  port: 8481
+
+resilience4j:
+  retry:
+    instances:
+      app-user-retry:
+        maxAttempts: 5
+        waitDuration: 1s
+        enableExponentialBackoff: true
+      rating-api-retry:
+        maxAttempts: 5
+        waitDuration: 1s
+        enableExponentialBackoff: true
+
+  circuitbreaker:
+    instances:
+      comment-circuit-breaker:
+        failureRateThreshold: 50 # i.e.Circuit will open when 50% of requests failed
+        permittedNumberOfCallsInHalfOpenState: 20
+        waitDurationInOpenState: 60s
+        minimumNumberOfCalls: 30

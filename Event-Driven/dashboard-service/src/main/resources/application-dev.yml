@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: dashboard-service
+  rabbitmq:
+    password: ${RABBITMQ_PASSWORD:guest}
+    username: ${RABBITMQ_USERNAME:guest}
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME} #To-Do - Add MySql Db details here
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL8Dialect
+
+  sleuth:
+    sampler:
+      probability: 1.0 # 1.0 means 100% logging 0.1 means 10% of logging will be traced
+
+  zipkin:
+    base-url: ${ZIPKIN_BASE_URL}
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_DEFAULT_ZONE}
+
+server:
+  port: 9100
+
+app-user-rmq:
+  queue-name: app-user-pub # Queue to get Msg from
+  exchange-name: app-user-topic-exchange
+  routing-key: app-rout-pub-key
+
+product-rmq:
+  queue-name: product-pub
+  topic-exchange: product-topic-exchange
+
+comment-rmq:
+  queue-name: comment-pub
+  direct-routing-key: comment-rout-pub-key
+  topic-exchange: comment-topic-exchange
+
+rating-rmq:
+  queue-name: rating-pub
+  direct-routing-key: rating-rout-pub-key
+  topic-exchange: rating-topic-exchange
