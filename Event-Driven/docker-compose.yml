@@ -1,0 +1,178 @@
+version: "3"
+# To avoid LogBack config creation Error of DB not supporting generated-Key etc
+# Create Database for each services after and restart all microservices e.g.
+#  CREATE DATABASE `productdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+#  CREATE DATABASE `appuserdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+#  CREATE DATABASE `commentdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+#  CREATE DATABASE `ratingdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+#  CREATE DATABASE `dashboarddb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+services:
+  # Service Discovery - Eureka server with memory limit of 700m for demo purposes only
+  eureka-server:
+    container_name: eureka-server
+    image: torrydocker/eureka-server:latest
+    ports:
+      - "8761:8761"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - microservice-network
+  # Sleuth/Zipkin Server - Distributed Tracing
+  zipkin-server:
+    container_name: zipkin-server
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+    #    environment:
+    #      SPRING_ZIPKIN_URL: "http://localhost:9411/zipkin"
+    networks:
+      - microservice-network
+  # RabbitMQ Service
+  rmq:
+    container_name: rmq-service
+    image: rabbitmq:3-management-alpine
+    environment: &rabbit-config
+      RABBITMQ_USERNAME: guest
+      RABBITMQ_PASSWORD: guest
+      RABBITMQ_HOST: localhost
+      RABBITMQ_PORT: 5672
+    networks:
+      - microservice-network
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  # Database Service
+  database:
+    container_name: mysql-db
+    image: mysql:5.7
+    environment:
+      #MYSQL_DATABASE: appuserdb
+      MYSQL_ROOT_PASSWORD: <DB_PASSWORD> # Replace appropriately
+      #MYSQL_USER: root
+    ports:
+      - "3306:3306"
+    networks:
+      - microservice-network
+  # API-Gateway
+  api-gateway:
+    depends_on:
+      - zipkin-server
+      - eureka-server
+      - rmq
+    container_name: api-gateway
+    image: torrydocker/api-gateway:latest
+    ports:
+      - "9001:9001"
+    environment:
+      EUREKA_DEFAULT_ZONE: "http://eureka-server:8761/eureka/"
+      ZIPKIN_BASE_URL: "http://zipkin-server:9411/"
+    networks:
+      - microservice-network
+  # Review Service
+  reviews-service:
+    container_name: reviews-service
+    image: torrydocker/review-service:latest
+    depends_on:
+      - zipkin-server
+      - eureka-server
+      - rmq
+      - api-gateway
+    environment: &service-env-variables
+      <<: *rabbit-config
+      EUREKA_DEFAULT_ZONE: "http://eureka-server:8761/eureka/"
+      ZIPKIN_BASE_URL: "http://zipkin-server:9411/"
+      API_GATEWAY_BASE_URL: "http://api-gateway:9001/"
+      RABBITMQ_HOST:  rmq-service
+    ports:
+      - "8481:8481"
+    networks:
+      - microservice-network
+  # App-User-Service
+  app-user-web:
+    depends_on: &anchor_depends_on
+      - database
+      - rmq
+      - eureka-server
+      - zipkin-server
+      - api-gateway
+    container_name: app-user
+    image: torrydocker/appuser:rmq-1.0.0
+    environment: &service-env
+      <<: *service-env-variables
+      PROFILE: dev
+      DB_HOST: mysql-db
+      DB_NAME: appuserdb
+      DB_USER: <DB_USER_NAME> # Replace appropriately
+      DB_PASSWORD: <DB_USER_PASSWORD> # Replace appropriately
+      DB_PORT: 3306
+      SMTP: <SMTP_HOST e.g. smtp.gmail.com>
+      SMTP_PORT: <SMTP_PORT>
+      LOG_BACK_USER_NAME: <SMTP_USER_EMAIL>
+      LOG_BACK_PASSWORD: <SMTP_USER_PASSWORD>
+      LOG_RECIPIENT_EMAIL: <RECIPIENT_EMAIL>
+      LOG_SENDER_EMAIL: <SMTP_USER_EMAIL>
+    ports:
+      - 8081:8081
+    networks:
+      - microservice-network
+    restart: on-failure # Restart the service to config logback properly
+  # Product-Service
+  product-web:
+    depends_on: *anchor_depends_on
+    restart: on-failure
+    container_name: product-service
+    image: torrydocker/productservice:rmq-1.0.0
+    environment:
+      <<: *service-env
+      DB_NAME: productdb
+    ports:
+      - 8381:8381
+    networks:
+      - microservice-network
+  # Comment-Service
+  comment-service:
+    restart: on-failure
+    depends_on: *anchor_depends_on
+    container_name: comment-service
+    image: torrydocker/commentservice:rmq-1.0.0
+    environment:
+      <<: *service-env
+      DB_NAME: commentdb
+    ports:
+      - "8281:8281"
+    networks:
+      - microservice-network
+  # Rating-Service
+  rating-service:
+    restart: on-failure
+    depends_on: *anchor_depends_on
+    container_name: rating-service
+    image: torrydocker/ratingservice:rmq-1.0.0
+    environment:
+      <<: *service-env
+      DB_NAME: ratingdb
+    networks:
+      - microservice-network
+    ports:
+      - "8181:8181"
+  # Dashboard Service
+  dashboard:
+    restart: on-failure
+    depends_on:
+      - eureka-server
+      - zipkin-server
+      - rmq
+    container_name: dashboard-container
+    image: torrydocker/dashboard:rmq-1.0.0
+    networks:
+      - microservice-network
+    environment:
+      <<: *service-env
+      DB_NAME: dashboarddb # For Logging
+    ports:
+      - "9100:9100"
+
+networks:
+  microservice-network:

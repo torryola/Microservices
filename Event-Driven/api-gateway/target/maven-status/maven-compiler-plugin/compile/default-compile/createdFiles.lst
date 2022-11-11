@@ -1,3 +1,0 @@
-net\torrydev\apigateway\ReviewApiGatewayApplication.class
-net\torrydev\apigateway\controller\UserFallbackController.class
-net\torrydev\apigateway\filter\ApiFilter.class

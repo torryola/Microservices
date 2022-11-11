@@ -1,5 +1,0 @@
-net\torrydev\microservices\ratingsservice\repository\RatingRepositoryTest.class
-net\torrydev\microservices\ratingsservice\RatingsServiceApplicationTests.class
-net\torrydev\microservices\ratingsservice\service\RatingServiceImplTest.class
-net\torrydev\microservices\ratingsservice\controller\RatingsControllerTest.class
-net\torrydev\microservices\ratingsservice\RatingsAcceptanceTest.class
